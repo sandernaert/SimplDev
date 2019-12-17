@@ -13,3 +13,7 @@ jobs:
       publishWebProjects: true
       arguments: '-c $(buildConfiguration) -o $(build.artifactstagingdirectory)'
       zipAfterPublish: false
+  - task: PublishBuildArtifacts@1    
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
